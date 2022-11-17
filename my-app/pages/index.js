@@ -3,7 +3,7 @@ import MeetupList from "../components/meetups/MeetupList";
 const DUMMY_MEETUPS = [
   {
     id: "m1",
-    title: "A first Meetup",
+    title: "A first Meetup ",
     image: "../13.jpeg",
     address: "군자의 어느 곳",
     description: "세상에서 제일 맛있는 블루베리 타르트",
