@@ -33,15 +33,26 @@ function HomePage() {
   }, []);
   return <MeetupList meetups={loadedMeetups} />;
 }
-export async function getStaticProps() {
+export async function getServerSideProps(context) {
+  const req = context.req;
+  const res = context.res;
   //fetch data from an API
   return {
     props: {
-      meetups: DUMMY_MEETUPS,
+      meeetups: DUMMY_MEETUPS,
     },
-    //요청이 들어올 때 이 페이지를 다시 생성할 때까지 NEXTJS가 대기하는 시간, revalidate 가 설정되어있으면 빌드 프로세스중에 페이지가 바로 생성되지 않는다
-    revalidate: 3600,
   };
 }
+
+// export async function getStaticProps() {
+//   //fetch data from an API
+//   return {
+//     props: {
+//       meetups: DUMMY_MEETUPS,
+//     },
+//     //요청이 들어올 때 이 페이지를 다시 생성할 때까지 NEXTJS가 대기하는 시간, revalidate 가 설정되어있으면 빌드 프로세스중에 페이지가 바로 생성되지 않는다
+//     revalidate: 3600,
+//   };
+// }
 
 export default HomePage;
